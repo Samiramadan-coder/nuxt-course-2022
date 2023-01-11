@@ -9,7 +9,21 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      screens: {
+        sm: '600px',
+        md: '728px',
+        lg: '984px',
+        xl: '1240px',
+        '2xl': '1496px',
+      }
+    },
+    colors: {
+      primary: "var(--primary)",
+      secondary: "var(--secondary)",
+      accent: "var(--accent)"
+    }
   },
   plugins: [],
 }

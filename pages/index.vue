@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <button @click="moveToAbout">Take me to About Page</button>
+  <div class="container py-6">
     Hello index!
   </div>
 </template>
-
-<script setup>
-  function moveToAbout() {
-    navigateTo("/about");
-  };
-</script> 

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #f00;
+    --secondary: #00f;
+    --accent: #080;
+  }
+}
