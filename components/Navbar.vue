@@ -1,13 +1,24 @@
 <template>
   <nav class="bg-purple-700 text-white shadow-lg p-3 flex justify-between">
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="/about">About</NuxtLink>
-    <NuxtLink to="/iphone">Iphones</NuxtLink>
-    <NuxtLink to="/profile">Profile</NuxtLink>
-    <p>Cart ({{ cart.length }})</p>
+    <div class="flex gap-6">
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/iphone">Iphones</NuxtLink>
+      <p>Cart ({{ cart.length }})</p>
+    </div>
+    <div v-if="auth.isAuthenticated">
+      <NuxtLink to="/profile">Profile</NuxtLink>
+      <button class="ml-2" @click="logout">Logout</button>
+    </div>
+    <NuxtLink to="/login" v-else>Login</NuxtLink>
   </nav>
 </template>
 
 <script setup>
   const cart = useCart();
+  const auth = useAuth();
+
+  function logout() {
+    auth.value.isAuthenticated = false;
+    navigateTo("/login")
+  };
 </script>
